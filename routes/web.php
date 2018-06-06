@@ -24,4 +24,10 @@ $router->group(['prefix'=>'/api/v1'],function() use($router){
 
     $router->post('/events/{id}/profile','EventsController@createEventProfile');
     $router->put('/events/{id}/profile','EventsController@editEventProfile');
+
+    $router->get('/events/{id}/speakers','SpeakerController@index');
+    $router->get('/events/{id}/speakers/{speakerId}','SpeakerController@get');
+    $router->post('/events/{id}/speakers','SpeakerController@create');
+    $router->put('/events/{eventId}/speakers/{speakerId}','SpeakerController@update');
+    $router->delete('/events/{eventId}/speakers/{speakerId}','SpeakerController@delete');
 });

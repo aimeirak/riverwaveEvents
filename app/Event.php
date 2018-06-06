@@ -26,12 +26,17 @@ class Event extends Model
         'updated_at'
     ];
     protected $with = [
-        'event_profile'
+        'event_profile',
+        'event_speakers'
     ];
 
 
     public function event_profile(){
         return $this->hasOne('App\EventProfile');
+    }
+
+    public function event_speakers(){
+        return $this->hasMany('App\Speaker');
     }
 
 }
